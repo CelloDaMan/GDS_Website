@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Week 2 Lab</title>
+</head>
+
+<body>
+<h1>Button Clicker</h1>
+<h2 id="output">0</h2>
+<h3 id="increase">1</h3>
+<!--Buttons-->
+<input type="button" id="btn" value="Click Me!">
+<br>
+<input type="button" id="reset-btn" value="Reset Click">
+<br>
+<input type="button" id="upgrade-btn" value="Upgrade Clicks">
+<!--Text field-->
+<input type="text" name="upgrade" id="upgrade">
+<br>
+<input type="button" id="multiply-btn" value="Multiply Clicks">
+<input type="text" name="multiply" id="multiply">
+
+
+
+<script>
+    //HTML References
+    var clickButton = document.getElementById("btn")
+    var resetButton = document.getElementById("reset-btn")
+    var upgradeClicks = document.getElementById("upgrade-btn")
+    var multiplyClicks = document.getElementById("multiply-btn")
+    var output = document.getElementById("output")
+    var increase = document.getElementById("increase")
+
+    //Internal Variables
+    var clicks = 0
+    var clickByAmount = 1
+    var multiplyByAmount = 1
+
+function increment()
+{
+    //Add to clicks
+    clicks+= clickByAmount;
+
+    //Change the innerHTML to the current amount of clicks
+    output.innerHTML = clicks;
+}
+
+    clickButton.addEventListener("click",increment)
+
+function reset()
+{
+    clicks = 0
+    output.innerHTML = 0
+}
+
+//assign the reset function to the reset button
+resetButton.addEventListener("click",reset)
+
+function upgradeClick()
+{
+    var upgradeBox = document.getElementById("upgrade")
+    clickByAmount = Number(upgradeBox.value)
+    increase.innerHTML = clickByAmount;
+}
+
+upgradeClicks.addEventListener("click",upgradeClick)
+
+function multiplyClick()
+{
+    var multiplyBox = document.getElementById("multiply")
+    multiplyAmount = multiplyBox.value
+    clicks = clicks *= multiplyByAmount
+    output.innerHTML = clicks;
+}
+
+multiplyClicks.addEventListener("click",multiplyClick)
+
+</script>
+
+</body>
+
+</html>

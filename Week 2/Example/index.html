@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Week 2 | Javascript</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    
+    <div id="jsExample">
+        <p>h</p>
+    </div>
+    
+    <script>
+        var divContainer = document.getElementById("jsExample")
+        divContainer.innerHTML = "<h1>Setting</h1>"
+        divContainer.innerHTML += "<h2>Adding</h2>"
+
+        function addNumbers(numberOne, numberTwo)
+        {
+            console.log(numberOne + numberTwo)
+        }
+
+        function alertMessage(messageToAlert)
+        {
+            var amountOfDays = 3;
+            //Calling a function inside another function
+            addNumbers(10, 26)
+            
+            alert(amountOfDays + " days until Mario steals your liver")
+            alert(messageToAlert)
+        }
+
+        function doubleParameter(paramOne, paramTwo)
+        {
+            alert(paramOne + paramTwo)
+        }
+
+        alertMessage("Good luck soldier")
+        doubleParameter("it's just a prank bro ", "(it's not)")
+
+        var test = "shuckle";
+        var a = 10
+        var b = 25
+        var compareString = "dunsparce"
+
+        if(a == b)
+    {
+        console.log("A = B")
+    }else console.log("A does not equal B :(")
+
+    if(a > 10)
+    {
+        console.log("A is greater than 10")
+    }
+
+    if(compareString == "dunsparce")
+    {
+        console.log("Dunsparce :)")
+    }else {
+        console.log("not Dunsparce :(")
+    }
+
+    console.log(a+b)
+    console.log(a-b)
+    console.log(a*b)
+
+    console.log(test + " and " ,compareString + " are cool pokemon")
+
+    </script>
+</body>
+</html>
